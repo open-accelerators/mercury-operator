@@ -9,11 +9,13 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>mercury-operator</artifactId>
-    <properties>
-        <operator-sdk.version>2.0.0.CR2</operator-sdk.version>
-    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.redhat.mercury</groupId>
+            <artifactId>mercury-operator-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>
             <artifactId>quarkus-operator-sdk</artifactId>
@@ -45,6 +47,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.strimzi</groupId>
+            <artifactId>api</artifactId>
+            <version>0.26.0</version>
         </dependency>
     </dependencies>
     <build>
