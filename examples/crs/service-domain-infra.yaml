@@ -1,9 +1,9 @@
 apiVersion: mercury.redhat.io/v1alpha1
 kind: ServiceDomainInfra
 metadata:
-  name: my-first-sdi
+  name: service-domain-infra
   labels:
-    app: examples
+    service-domain-infra: service-domain-infra
 spec:
   kafka:
     replicas: 1

@@ -28,14 +28,11 @@ description: "# Mercury Operator (Beta)\n## Prerequisites:\n\n- Kafka operator i
   Upon the successful creation of the `Kafka` broker, its URL will be displayed in
   the Service Domain Infra status.\n* On `ServiceDomain` object creation, the operator
   will create a Deployment, a Service and a Kafka Topic.\n* If the `ServiceDomain`
-  has to be exposed, it will also create the Camel-K integrations.\n\n![Mercury Deployment](../docs/images/operator-all.svg)\n\n##
+  has to be exposed, it will also create the Camel-K integrations.\n\n![Mercury Deployment](./images/operator-all.svg)\n\n##
   Preparation\n\n### Common\n\nThe following resources must be created where the integrations
-  are going to be built.\n\n- A configMap containing a Maven settings, before doing
-  so, export the user/token\n  with permissions to READ packages because our integrations
-  depend on custom Maven\n  dependencies published on GitHub Packages.\n\n```shell\nexport
-  GITHUB_USER=my-user\nexport GITHUB_TOKEN=my-github-token-with-read-packages-permission\nSETTINGS=$(sed
-  -e \"s/github_user/$GITHUB_USER/\" -e \"s/github_password/$GITHUB_TOKEN/\" ../deploy/config/camel-k/mercury-mvn-settings.xml)
-  && kubectl create cm mercury-mvn-settings --from-literal=settings.xml=$SETTINGS\n```\n\n-
+  are going to be built *only if you are using\nthe development version*.\n\n- A configMap
+  containing a Maven settings.\n\n```shell\nkubectl create cm mercury-mvn-settings
+  --from-literal=settings.xml=./deploy/config/camel-k/mercury-mvn-settings.xml\n```\n\n-
   An Integration Platform pointing to this configMap.\n\n```shell\noc apply -f ../deploy/config/camel-k/integration-platform.yaml\n```\n\n###
   On Minikube\n\nYou will require the `registry` addon and then create the IntegrationPlatform\npointing
   to the local registry. Check the [Camel-K documentation](https://camel.apache.org/camel-k/1.8.x/installation/registry/registry.html)\nto
