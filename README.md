@@ -34,7 +34,7 @@ Supported Kafka storage types are:
 You can create an example `ServiceDomainInfra` from the examples folder:
 
 ```shell
-kubectl create -f examples/crs/my-first-sdi.yaml
+kubectl create -f examples/crs/service-domain-infra.yaml
 ```
 
 ### Service Domain
@@ -51,23 +51,26 @@ apiVersion: mercury.redhat.io/v1alpha1
 kind: ServiceDomain
 metadata:
   name: example-customer-offer
+  labels:
+    service-domain: customer-offer
 spec:
-  businessImage: quay.io/ecosystem-appeng/customer-offer-example:1.0.1-SNAPSHOT
-  serviceDomainInfra: example-service-domain-infra
+  businessImage: quay.io/ecosystem-appeng/customer-offer-example:v1.0.2
+  serviceDomainInfra: service-domain-infra
   type: CUSTOMER_OFFER
   expose:
-    - http
+    http:
+      api-version: v1
 ```
 
 - businessImage - the image to create the service container from.
 - serviceDomainInfra - the name of the service domain infra this service domain is a part of.
 - type - the type of the service domain.
-- expose - a list of endpoints this service domain is exposed 
+- expose - how to expose the service. It will use the api-version v1.
 
 You can create an example `ServiceDomain` from the examples folder:
 
 ```shell
-kubectl create -f examples/crs/my-customer-offer.yaml
+kubectl create -f examples/crs/example-customer-offer.yaml
 ```
 
 ## Functionality
