@@ -1,0 +1,13 @@
+apiVersion: mercury.redhat.io/v1alpha1
+kind: ServiceDomain
+metadata:
+  name: example-customer-offer
+  labels:
+    service-domain: customer-offer
+spec:
+  businessImage: quay.io/ecosystem-appeng/customer-offer-example:v1.0.2
+  serviceDomainInfra: service-domain-infra
+  type: CUSTOMER_OFFER
+  # expose:
+  #   http:
+  #     api-version: v1
