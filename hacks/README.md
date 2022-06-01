@@ -38,15 +38,3 @@ Example:
 
 The `generate-csv.sh` script is a convenience script that generates a CSV from the 
 existing resources in the [deploy](../deploy) folder.
-
-## Update version references
-
-The `update-version.sh` script expects 2 arguments, one is the _current version_ and the other is the _next version_.
-Then it will read the [version-resources](./version-resources) file and find all the matching files to replace the
-_current version_ by the _next version_.
-
-Example:
-
-```shell
-./update-version.sh 1.0.1-SNAPSHOT 1.0.1.Final
-```

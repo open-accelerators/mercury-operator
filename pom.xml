@@ -9,6 +9,11 @@
     </parent>
     <artifactId>mercury-operator</artifactId>
     <name>Mercury Operator</name>
+    
+    <properties>
+        <quarkus.operator-sdk.crd.generate>false</quarkus.operator-sdk.crd.generate>
+    </properties>
+    
     <dependencies>
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
