@@ -82,16 +82,13 @@ be part of a BIAN ecosystem.
 
 ### Common
 
-The following resources must be created where the integrations are going to be built.
+The following resources must be created where the integrations are going to be built *only if you are using
+the development version*.
 
-- A configMap containing a Maven settings, before doing so, export the user/token
-  with permissions to READ packages because our integrations depend on custom Maven
-  dependencies published on GitHub Packages.
+- A configMap containing a Maven settings.
 
 ```shell
-export GITHUB_USER=my-user
-export GITHUB_TOKEN=my-github-token-with-read-packages-permission
-SETTINGS=$(sed -e "s/github_user/$GITHUB_USER/" -e "s/github_password/$GITHUB_TOKEN/" ../deploy/config/camel-k/mercury-mvn-settings.xml) && kubectl create cm mercury-mvn-settings --from-literal=settings.xml=$SETTINGS
+kubectl create cm mercury-mvn-settings --from-literal=settings.xml=./deploy/config/camel-k/mercury-mvn-settings.xml
 ```
 
 - An Integration Platform pointing to this configMap.
