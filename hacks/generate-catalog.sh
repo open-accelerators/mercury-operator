@@ -82,7 +82,7 @@ do
 done
 
 # Build and validate catalog
-opm init mercury-operator --default-channel=stable --description=./README.md --icon=./mercury.png --output yaml > ./deploy/olm-catalog/catalog/operator.yaml
+opm init mercury-operator --default-channel=stable --description=./README.md --icon=./images/mercury.png --output yaml > ./deploy/olm-catalog/catalog/operator.yaml
 for v in "${versions[@]}"
 do
   opm render ${REGISTRY}/mercury-bundle:$v --output yaml >> ./deploy/olm-catalog/catalog/operator.yaml

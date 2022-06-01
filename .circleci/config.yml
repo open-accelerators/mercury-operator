@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Analyze on SonarCloud
-          command: mvn install sonar:sonar -Pcoverage -Dsonar.projectKey=open-accelerators_mercury
+          command: mvn install -s .m2/settings.xml  sonar:sonar -Pcoverage -Dsonar.projectKey=open-accelerators_mercury
 
 workflows:
   main:

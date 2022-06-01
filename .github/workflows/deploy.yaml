@@ -28,8 +28,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+          overwrite-settings: false
       - name: Build native image
-        run: mvn package -Dcontainer-build -DskipTests -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=150
+        run: mvn package -s .m2/settings.xml -Dcontainer-build -DskipTests -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=150
       - name: Push operator to quay.io
         id: push-op-to-quay
         uses: redhat-actions/push-to-registry@v2.5.1

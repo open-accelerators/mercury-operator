@@ -76,7 +76,7 @@ be part of a BIAN ecosystem.
 * On `ServiceDomain` object creation, the operator will create a Deployment, a Service and a Kafka Topic.
 * If the `ServiceDomain` has to be exposed, it will also create the Camel-K integrations.
 
-![Mercury Deployment](../docs/images/operator-all.svg)
+![Mercury Deployment](./images/operator-all.svg)
 
 ## Preparation
 
