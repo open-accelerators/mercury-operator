@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.open-accelerators</groupId>
         <artifactId>mercury-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
     </parent>
     <artifactId>mercury-operator</artifactId>
     <name>Mercury Operator</name>
@@ -14,7 +13,7 @@
         <connection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</developerConnection>
         <url>https://github.com/open-accelerators/mercury-operator/tree/main</url>
-        <tag>HEAD</tag>
+        <tag>v1.0.2</tag>
     </scm>
 
     <properties>
@@ -25,7 +24,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>mercury-common</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>
