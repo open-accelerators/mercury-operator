@@ -7,13 +7,14 @@
         <version>1.0.2</version>
     </parent>
     <artifactId>mercury-operator</artifactId>
+  <version>1.0.3-SNAPSHOT</version>
     <name>Mercury Operator</name>
     
     <scm>
         <connection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</developerConnection>
         <url>https://github.com/open-accelerators/mercury-operator/tree/main</url>
-        <tag>v1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
