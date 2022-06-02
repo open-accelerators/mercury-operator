@@ -5,8 +5,8 @@ set -o pipefail
 set -o nounset
 
 REGISTRY='quay.io/ecosystem-appeng'
-DEV_VERSION=1.0.2
-STABLE_VERSION=1.0.1
+DEV_VERSION=1.0.3
+STABLE_VERSION=1.0.2
 CATALOG_VERSION=$DEV_VERSION
 CE=''
 push='false'
@@ -70,7 +70,7 @@ done
 check_commands
 
 # Build and validate bundles
-versions=("1.0.1" "1.0.2")
+versions=("1.0.2" "1.0.3")
 for v in "${versions[@]}"
 do
   ${CE} build -t ${REGISTRY}/mercury-bundle:$v -f ./deploy/olm-catalog/bundle.Dockerfile ./deploy/olm-catalog/$v/
@@ -93,7 +93,7 @@ schema: olm.channel
 package: mercury-operator
 name: stable
 entries:
-  - name: mercury-operator.$STABLE_VERSION
+  - name: mercury-operator.v$STABLE_VERSION
 ---
 schema: olm.channel
 package: mercury-operator

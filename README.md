@@ -54,7 +54,7 @@ metadata:
   labels:
     service-domain: customer-offer
 spec:
-  businessImage: quay.io/ecosystem-appeng/customer-offer-example:v1.0.2
+  businessImage: quay.io/ecosystem-appeng/customer-offer-example:v1.0.3
   serviceDomainInfra: service-domain-infra
   type: CUSTOMER_OFFER
   expose:
@@ -146,5 +146,5 @@ We have created a Catalog containing the Mercury Operator. You can install this 
 Operator Lifecycle Manager and then just create a Subscription via the user interface.
 
 ```shell
-kubectl apply -n olm -f ./deploy/olm-catalog/1.0.2/catalog-source.yaml
+kubectl apply -n olm -f ./deploy/olm-catalog/1.0.3/catalog-source.yaml
 ```
