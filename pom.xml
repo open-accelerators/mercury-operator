@@ -10,15 +10,22 @@
     <artifactId>mercury-operator</artifactId>
     <name>Mercury Operator</name>
     
+    <scm>
+        <connection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/open-accelerators/mercury-operator.git</developerConnection>
+        <url>https://github.com/open-accelerators/mercury-operator/tree/main</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <quarkus.operator-sdk.crd.generate>false</quarkus.operator-sdk.crd.generate>
     </properties>
     
     <dependencies>
         <dependency>
-            <groupId>${project.parent.groupId}</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>mercury-common</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.operatorsdk</groupId>
@@ -35,6 +42,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.sundr</groupId>
