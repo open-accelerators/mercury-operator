@@ -10,6 +10,7 @@ import com.redhat.mercury.operator.model.KafkaStorageBuilder;
 import com.redhat.mercury.operator.model.ServiceDomainInfra;
 import com.redhat.mercury.operator.model.ServiceDomainInfraBuilder;
 import com.redhat.mercury.operator.model.ServiceDomainInfraSpecBuilder;
+import com.redhat.mercury.operator.model.ServiceDomainInfraStatusBuilder;
 import com.redhat.mercury.operator.utils.ResourceUtils;
 
 import io.fabric8.kubernetes.api.model.Condition;
@@ -248,7 +249,7 @@ public class ServiceDomainInfraControllerTest extends AbstractTest {
                         .withName("my-sdi")
                         .withNamespace(SERVICE_DOMAIN_INFRA_NAMESPACE)
                         .build())
-                .withNewSpec()
+                .withSpec(new ServiceDomainInfraSpecBuilder()
                         .withNewKafka()
                         .withReplicas(3)
                         .withNewStorage()
@@ -256,8 +257,8 @@ public class ServiceDomainInfraControllerTest extends AbstractTest {
                         .withSize("1Gi")
                         .endStorage()
                         .endKafka()
-                .endSpec()
-                .withNewStatus().endStatus()
+                        .build())
+                .withStatus(new ServiceDomainInfraStatusBuilder().build())
                 .build();
         UpdateControl<ServiceDomainInfra> update = serviceDomainInfraController.reconcile(sdi, null);
 
@@ -321,8 +322,7 @@ public class ServiceDomainInfraControllerTest extends AbstractTest {
                         .withName("my-sdi")
                         .withNamespace(SERVICE_DOMAIN_INFRA_NAMESPACE)
                         .build())
-                .withNewSpec().endSpec()
-                .withNewStatus().endStatus()
+                .withSpec(new ServiceDomainInfraSpecBuilder().build())
                 .build();
     }
 

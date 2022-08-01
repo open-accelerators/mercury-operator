@@ -7,7 +7,6 @@
         <version>1.0.3-SNAPSHOT</version>
     </parent>
     <artifactId>mercury-operator</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
     <name>Mercury Operator</name>
     
     <scm>
