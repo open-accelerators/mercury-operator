@@ -8,6 +8,6 @@ spec:
   businessImage: quay.io/ecosystem-appeng/party-routing-profile-example:v1.0.3
   serviceDomainInfra: service-domain-infra
   type: PARTY_ROUTING_PROFILE
-  # expose:
-  #   http:
-  #     api-version: v1
+  expose:
+    http:
+      api-version: v1
